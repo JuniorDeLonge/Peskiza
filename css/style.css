@@ -1,0 +1,268 @@
+/* @juniordelonge */
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    max-width: 900px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+.logo-search-bar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin-right: -10px;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    transition: border-bottom 0.3s;
+    border-bottom: 4px solid #4285f4;
+    background-color: #c2d9ff;
+}
+
+#searchInput:focus {
+    border-bottom: 2px solid #4285f4;
+}
+
+#searchBtn,
+#searchImagesBtn {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 7px;
+    cursor: pointer;
+    border: 2px solid #4285f4;
+    border-radius: 15px;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    background-color: #4285f4;
+    color: #f5f5f5;
+}
+
+#searchBtn:hover,
+#searchImagesBtn:hover {
+    background-color: #5a99ff;
+    color: #f5f5f5;
+}
+
+#suggestions {
+    color: #ff3f52;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #181717;
+}
+
+nav a:hover {
+    color: #4285f4;
+}
+
+#darkModeToggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #4285f4;
+    font-size: 18px;
+}
+
+#darkModeToggle:hover {
+    color: #82ff62;
+}
+
+body.dark-mode {
+    background-color: #181717;
+    color: #e7e7e7;
+}
+
+body.dark-mode #searchInput {
+    border-bottom: 2px solid #82ff62; /* Altera a cor da borda inferior do input de pesquisa no modo escuro */
+    background-color: #252323;
+    color: #82ff62;
+}
+
+body.dark-mode #searchBtn,
+body.dark-mode #searchImagesBtn {
+    border: 2px solid #252323; /* Altera a cor da borda dos botões no modo escuro */
+    color: #82ff62; /* Altera a cor do texto dos botões no modo escuro */
+    background-color: #252323;
+}
+
+body.dark-mode #searchBtn:hover,
+body.dark-mode #searchImagesBtn:hover {
+    background-color: #82ff62; /* Altera a cor de fundo dos botões no hover no modo escuro */
+    color: #252323; /* Altera a cor do texto dos botões no hover no modo escuro */
+    border: 2px solid #252323; /* Altera a cor da borda dos botões no modo escuro */
+}
+
+body.dark-mode nav a {
+    color: #e7e7e7; /* Altera a cor dos links de navegação no modo escuro */
+}
+
+body.dark-mode nav a:hover {
+    color: #82ff62; /* Altera a cor dos links de navegação no hover no modo escuro */
+}
+
+.footer-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-text {
+    color: #333;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #82ff62;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .logo-search-bar {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        display: block;
+    }
+
+    #searchInput {
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    #searchBtn,
+    #searchImagesBtn {
+        padding: 10px;
+        font-size: 16px;
+        margin-left: 0;
+        margin-top: 7px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    header,
+    .footer-content {
+        flex-direction: column;
+        padding: 21px;
+        width: 334px;
+        height: 67px;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #darkModeToggle {
+        align-self: flex-end;
+    }
+}
